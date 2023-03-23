@@ -21,5 +21,25 @@ telescope.setup {
         ["<C-k>"] = actions.move_selection_previous,
       },
     },
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '-u' -- thats the new thing
+    },
+  },
+  pickers = {
+    find_files = {
+      hidden = true
+    },
+    live_grep = {
+      additional_args = function(opts)
+        return {"--hidden"}
+      end
+    },
   },
 }
