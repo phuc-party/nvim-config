@@ -11,6 +11,10 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+  filters = {
+    dotfiles = false
+  },
+  sort_by = "case_sensitive",
   update_focused_file = {
     enable = true,
     update_cwd = true,
@@ -54,7 +58,7 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 30,
+    width = 80,
     side = "left",
     mappings = {
       list = {
@@ -64,4 +68,7 @@ nvim_tree.setup {
       },
     },
   },
+  git = {
+    enable = false,
+  }
 }
